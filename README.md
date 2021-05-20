@@ -46,24 +46,24 @@
     - -50 Алкоголь
     - -70 Усталость
 
-## Install PostgreSQL
+## Установка PostgreSQL
 sudo apt install postgresql<br>
 sudo gem install pg<br>
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"<br>
 sudo -u postgres createdb rails_starter_project_development<br>
 
-### Install
+### Установка
 ```bash
 bundle install
 
-## Run program
+## Запуск программы
 ```bash
 rails s
 
-## Run test
+## Запуск теста
 ```bash
 bundle exec rspec
 
-## Run rubocop
+## Запуск rubocop
 ```bash
 rubocop
