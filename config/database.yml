@@ -17,4 +17,3 @@ test:
 production:
   <<: *default
   database: production
-  username: rails_starter_project
