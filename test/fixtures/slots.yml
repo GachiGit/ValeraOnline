@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  name: MyString
+  mana: 1
+  happiens: 1
+  fatigue: 1
+  money: 1
+
+two:
+  user_id: 1
+  name: MyString
+  mana: 1
+  happiens: 1
+  fatigue: 1
+  money: 1

@@ -1,0 +1,22 @@
+  <h1>Load Game</h1>
+
+  <div align="center">
+    <%= form_with scope: :load_form, url: "load_game" do |f| %>
+      <table>
+        <tr>
+          <td align="center" colspan="3">
+            <%= f.select :saves_list, @save_names_list, {:multiple => false}, {class: "box"} %>
+		  </td>
+        </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <div class="container"><%= flash.alert %></div>
+            </td>
+          </tr>
+      </table>
+      <ul class="block">
+        <li><%= link_to "Cancel", game_path %></li>
+        <li><%= f.submit :"Load Game", class: "button", value: "Load Game" %></li>
+      </ul>
+    <% end %>
+  </div>

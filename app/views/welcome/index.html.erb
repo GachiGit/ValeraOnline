@@ -1,0 +1,95 @@
+  <table align="center" width="100%">
+    <tr>
+      <td width="0%"></td>
+    <td>
+      <% if user_signed_in? %>
+        <ul class="block" style="margin: 0 0 5% 0">
+          <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to 'View Profile', edit_user_registration_path %>
+        </ul>
+      <% else %>
+        <ul class="block" style="margin: 0 0 5% 0">
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+        </ul>
+      <% end %>
+    </td>
+    </tr>
+    <tr>
+      <td colspan="2"><h1 align='center'>Valera Online</h1></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2">
+        <ul class='exit' style='margin: 0 0 0 0%'>
+          <li><%= link_to 'Start New Game', new_game_path, method: :start_new_game if user_signed_in? %></li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">  
+        <p>
+          This project is implementation of the game "Marginal Valera". Our hero wants to become a freelancer to work from home. To do this, he needs to save up 30,000 money. But not everything is so simple: our hero suffers from alcohol addiction, and often spoils money for a drink. Will our hero manage to combine the incompatible?
+        </p>
+        <p>
+          <font style='color: rgb(200, 0, 0); font-weight: bold'>Game rules:</font><br>
+          <ul class='game_rules'>
+            <li>Player wins if he accumulates 30,000 money;</li>
+            <li>Player losses if his happiens becomes less than 10;</li>
+            <li>Player loses 1 point happiens if mana equal 0;</li>
+            <li>Player loses 1 point happiens if fatigue equal 100;</li>
+            <li>Player's mana can vary between 0 and 100;</li>
+            <li>Player's happiens can vary between -10 and 10;</li>
+            <li>Player's fatigue can vary between 0 and 100;</li>
+            <li>The player cannot have money less than 0.</li>
+          </ul>
+        </p>
+		<div><% flash.notice %></div>
+        <p>
+          <font style='color: rgb(200, 0, 0); font-weight: bold'>Possible Actions:</font><br>
+          <ul class='game_rules'>
+            <li>Go Job (if mana <= 60)
+              <ul class='input_list'>
+                <li>-30 Mana</li>
+                <li>+1250 Money</li>
+                <li>+30 fatigue</li>
+              </ul>
+            </li>
+            <li>Rest
+              <ul class='input_list'>
+                <li>-10 Mana</li>
+                <li>-30 fatigue</li>
+              </ul>
+            </li>
+            <li>Watch Serial
+              <ul class='input_list'>
+                <li>-10 Mana</li>
+                <li>+1 Happiens</li>
+                <li>-15 fatigue</li>
+              </ul>
+            </li>
+            <li>Drink With Marginals (if Money >= 1500)
+              <ul class='input_list'>
+                <li>+50 Mana</li>
+                <li>-1500 Money</li>
+                <li>+2 Happiens</li>
+                <li>-30 Fatigue</li>
+              </ul>
+            </li>
+            <li>Sing
+              <ul class='input_list'>
+                <li>+1 Happiens</li>
+                <li>+50~450 Money (if Mana >= 40)</li>
+                <li>+10 Fatigue</li>
+              </ul>
+            </li>
+            <li>Sleep
+              <ul class='input_list'>
+                <li>-50 Mana</li>
+                <li>-70 Fatigue</li>
+              </ul>
+            </li>
+          </ul>
+        </p>
+      </td>
+    </tr>
+  </table>

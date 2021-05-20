@@ -1,0 +1,21 @@
+  <h1>Save game</h1>
+
+  <div align="center">
+    <%= form_with scope: :save_form, url: slots_path, local: true do |f| %>
+      <table>
+        <tr align="center">
+          <td>Name save:</td>
+          <td><%= f.text_field :name_save, class: "input" %></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div align="center" class="container"><%= flash.alert %></div>
+          </td>
+        </tr>
+      </table>
+      <ul class="block">
+        <li><%= link_to "Cancel", game_path %></li>
+        <li><%= f.submit :"Save Game", class: "button", value: "Save Game" %></li>
+      </ul>
+    <% end %>
+  </div>

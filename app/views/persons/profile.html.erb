@@ -1,0 +1,34 @@
+  <h1 align="center">Your profile</h1>
+  <%= form_with scope: :form_profile, url: persons_profile_path, local: true do |f| %>
+    <table align="center">
+      <tr height="30px">
+        <td align="right">E-Mail:</td>
+        <td align="center"><%= current_user.email %></td>
+      </tr>
+      <tr height="30px">
+        <td align="right">Count of Victories:</td>
+        <td align="center"><%= current_user.wins %></td>
+      </tr>
+      <tr height="30px">
+        <td align="right">Count of Defeates:</td>
+        <td align="center"> <%= current_user.defeates %></td>
+      </tr>
+      <tr height="30px">
+        <td align="right" style="vertical-align: middle">New Password:</td>
+        <td>
+          <%= f.password_field :password, class: "input" %>
+        </td>
+      </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <div align="center" class="container">
+              <%= @message %>
+            </div>
+          </td>
+        </tr>
+    </table>
+    <ul class="block">
+      <li><%= link_to "Back in menu", root_path %></li>
+      <li><%= f.submit :submit, class: "button", value: "Submit" %></li>
+    </ul>
+  <% end %>

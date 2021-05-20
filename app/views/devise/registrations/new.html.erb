@@ -1,0 +1,44 @@
+  <h1>Sign Up</h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <table align="center" width="80%">
+      <tr>
+        <td align="center">
+          <div class="container"><%= render "devise/shared/error_messages", resource: resource %></div>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">E-Mail</td>
+      </tr>
+      <tr>
+        <td align="center"><%= f.email_field :email, class: "input" %></td>
+      </tr>
+      <tr>
+        <td align="center">
+          Password
+          <% if @minimum_password_length %>
+            (<%= @minimum_password_length %> characters minimum)
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <%= f.password_field :password, class: "input" %>
+        </td>
+      </tr>
+      <tr>
+          <td align="center">Password Confirmation</td>
+      </tr>
+      <tr>
+          <td align="center"><%= f.password_field :password_confirmation, class: "input" %></td>
+      </tr>
+      <tr>
+        <td>
+          <ul class="block">
+            <li><%= link_to 'Back in menu', root_path %></li>
+            <li><%= f.submit :"Sign Up", class: 'button', value: "Sign Up" %></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  <% end %>

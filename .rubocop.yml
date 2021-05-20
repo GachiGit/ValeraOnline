@@ -1,0 +1,29 @@
+require:
+  - rubocop-rspec
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  
+Metrics/MethodLength:
+  Max: 20
+
+Layout/LineLength:
+  Exclude:
+    - 'config/initializers/devise.rb'
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'spec/**/*_spec.rb'
+    - 'config/routes.rb'

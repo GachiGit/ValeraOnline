@@ -1,0 +1,66 @@
+  <table align="center" width="70%">
+  <tr>
+    <td>
+    <%= form_with do |form| %>
+      <h1 align="center">Valera Online</h1>
+      <div align="center" class="container">
+        <%= flash.notice %>
+      </div>
+    </td>
+    <td width='30%'>
+      <ul class="action_list">
+        <li><%= link_to 'New Game', new_game_path, method: :new_game %></li>
+        <li><%= link_to "Save Game", new_slot_path if !@is_lose %></li>
+        <li><%= link_to "Load Game", slots_path %></li>
+        <li><%= link_to 'Help', rules_path %></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+  <div align="center">
+    <h3 style="margin: 0 0 3% 0">Player parameters</h3>
+      <table align='center' style='color: rgb(0, 0, 0)'>
+        <tr>
+          <td>Mana </td>
+          <td width="10px"></td>
+          <td><%= form.label :mana_value, value=current_user.mana %></td>
+        </tr>
+        <tr>
+          <td>Happiens </td>
+          <td width="10px"></td>
+          <td><%= form.label :funny_value, value=current_user.happiens %></td>
+        </tr>
+        <tr>
+          <td>Fatigue </td>
+          <td width="10px"></td>
+          <td><%= form.label :tired_value, value=current_user.fatigue %></td>
+        </tr>
+        <tr>
+          <td>Money </td>
+          <td width="10px"></td>
+          <td><%= form.label :money_value, value=current_user.money %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+  </td>
+    <td>
+      <% if !@is_lose %>
+        <ul class="action_list" style="margin: 12% 0 0 0">
+          <li><%= link_to 'Go Job', go_job_path, method: :go_job %></li>
+          <li><%= link_to 'Rest', rest_path, method: :rest %></li>
+          <li><%= link_to 'Watch Serial', watch_serial_path, method: :watch_serial %></li>
+          <li><%= link_to 'Drink With Marginals', drink_with_marginals_path, method: :drink_with_marginals %></li>
+          <li><%= link_to 'Sleep', sleep_path, method: :sleep %></li>
+          <li><%= link_to 'Sing', sing_path, method: :sing %></li>
+        </ul>
+      <% end %>
+    </td>
+  </tr>
+  </table>
+  <div align="center">
+      <ul class="exit" style="margin: 3% 0 0% 0">
+        <li><%= link_to 'Exit', root_path %></li>
+      </ul>
+  </div>
